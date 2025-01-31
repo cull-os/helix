@@ -553,6 +553,20 @@ name = "c"
 source = { git = "https://github.com/tree-sitter/tree-sitter-c", rev = "7175a6dd5fc1cee660dce6fe23f6043d75af424a" }
 
 [[language]]
+name = "cab"
+scope = "source.cab"
+injection-regex = "cab"
+file-types = ["cab"]
+shebangs = []
+comment-token = "#"
+language-servers = []
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "cab"
+source = { git = "https://github.com/cull-os/tree-sitter-cab", rev = "da2650f1761789e70c716d7c8c7fd6a494facdd6" }
+
+[[language]]
 name = "cpp"
 scope = "source.cpp"
 injection-regex = "cpp"
