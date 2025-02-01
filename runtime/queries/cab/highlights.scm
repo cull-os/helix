@@ -40,14 +40,23 @@
 
 (infix_operation
   operator: "|>"
-  right: _ @function)
+  right: (identifier) @function)
+(pattern_infix_operation
+  operator: "|>"
+  right: (identifier) @function)
 
 (infix_operation
-  left: _ @function
+  left: (identifier) @function
+  !operator)
+(pattern_infix_operation
+  left: (identifier) @function
   !operator)
 
 (infix_operation
-  left: _ @function
+  left: (identifier) @function
+  operator: "<|")
+(pattern_infix_operation
+  left: (identifier) @function
   operator: "<|")
 
 (infix_operation
@@ -66,9 +75,8 @@
   (island)
 ] @string.special.path
 
-(pattern_identifier) @variable.parameter
-
 (identifier) @variable
+(pattern_identifier) @variable.parameter
 
 (string) @string
 

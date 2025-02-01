@@ -564,7 +564,7 @@ indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
 name = "cab"
-source = { git = "https://github.com/cull-os/tree-sitter-cab", rev = "da2650f1761789e70c716d7c8c7fd6a494facdd6" }
+source = { git = "https://github.com/cull-os/tree-sitter-cab", rev = "3215931f6b2ee7ef91b303b2021d5bf9727f7ece" }
 
 [[language]]
 name = "cpp"
