@@ -195,9 +195,17 @@ cd helix
 </li>
 <li>
 <p>Compile from source:</p>
-<pre><code class="language-sh">cargo install --path helix-term --locked
+<pre><code class="language-sh"># Reproducible
+cargo install --path helix-term --locked
 </code></pre>
-<p>This command will create the <code>hx</code> executable and construct the tree-sitter
+<pre><code class="language-sh"># Optimized
+cargo install \
+   --profile opt \
+   --config 'build.rustflags="-C target-cpu=native"' \
+   --path helix-term \
+   --locked
+</code></pre>
+<p>Either command will create the <code>hx</code> executable and construct the tree-sitter
 grammars in the local <code>runtime</code> folder.</p>
 </li>
 </ol>
@@ -311,10 +319,10 @@ use the following command to build the release binary and package it into a <cod
 As long as you leave a <code>target/release/hx</code> file, it will get packaged with <code>cargo deb --no-build</code></p>
 </blockquote>
 <blockquote>
-<p>💡 Don't worry about the repeated</p>
+<p>💡 Don't worry about the following:</p>
 <pre><code>warning: Failed to find dependency specification
 </code></pre>
-<p>warnings. Cargo deb just reports which packaged files it didn't derive dependencies for. But
+<p>Cargo deb just reports which packaged files it didn't derive dependencies for. But
 so far the dependency deriving seams very good, even if some of the grammar files are skipped.</p>
 </blockquote>
 <p>You can find the resulted <code>.deb</code> in <code>target/debian/</code>. It should contain everything it needs, including the</p>
